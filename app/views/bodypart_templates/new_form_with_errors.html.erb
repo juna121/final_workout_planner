@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @bodypart.present? %>
+  <% if @bodypart.errors.any? %>
+    <% @bodypart.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new bodypart
+</h1>
+
+
+<hr>
+
+<!-- Form bodypart start -->
+<form action="/create_bodypart" method="post">
+<!-- Form bodypart end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @bodypart.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create bodypart
+  </button>
+</form>
+
+<hr>
+
+<a href="/bodyparts">
+  Go back
+</a>

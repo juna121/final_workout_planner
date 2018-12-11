@@ -1,0 +1,32 @@
+<h1>
+  Edit bodypart #<%= @bodypart.id %>
+</h1>
+
+<hr>
+
+<!-- Form bodypart start -->
+<form action="/update_bodypart/<%= @bodypart.id %>" method="post">
+<!-- Form bodypart end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @bodypart.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update bodypart
+  </button>
+</form>
+
+<hr>
+
+<a href="/bodyparts">
+  Go back
+</a>

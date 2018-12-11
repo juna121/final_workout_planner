@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All bodyparts
+    </h1>
+
+    <a href="/bodyparts/new" class="btn btn-block btn-outline-secondary">
+      Add a new bodypart
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @bodyparts.each do |bodypart| %>
+      <tr>
+        <!-- Display bodypart.id start -->
+        <td>
+          <%= bodypart.id %>
+        </td>
+        <!-- Display bodypart.id end -->
+
+        <!-- Display bodypart.name start -->
+        <td>
+          <%= bodypart.name %>
+        </td>
+        <!-- Display bodypart.name end -->
+
+        <!-- Display bodypart.created_at start -->
+        <td>
+          <%= time_ago_in_words(bodypart.created_at) %> ago
+        </td>
+        <!-- Display bodypart.created_at end -->
+
+        <!-- Display bodypart.updated_at start -->
+        <td>
+          <%= time_ago_in_words(bodypart.updated_at) %> ago
+        </td>
+        <!-- Display bodypart.updated_at end -->
+
+        <td>
+          <a href="/bodyparts/<%= bodypart.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

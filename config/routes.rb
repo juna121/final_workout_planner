@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Bodypart resource:
+
+  # CREATE
+  get("/bodyparts/new", { :controller => "bodyparts", :action => "new_form" })
+  post("/create_bodypart", { :controller => "bodyparts", :action => "create_row" })
+
+  # READ
+  get("/bodyparts", { :controller => "bodyparts", :action => "index" })
+  get("/bodyparts/:id_to_display", { :controller => "bodyparts", :action => "show" })
+
+  # UPDATE
+  get("/bodyparts/:prefill_with_id/edit", { :controller => "bodyparts", :action => "edit_form" })
+  post("/update_bodypart/:id_to_modify", { :controller => "bodyparts", :action => "update_row" })
+
+  # DELETE
+  get("/delete_bodypart/:id_to_remove", { :controller => "bodyparts", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Circuit resource:
 
   # CREATE
