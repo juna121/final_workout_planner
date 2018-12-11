@@ -1,4 +1,6 @@
 ActiveAdmin.register Circuit do
+
+ permit_params :workout_id, :exercise_id, :reps, :sets, :weight, :unit, :note
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
