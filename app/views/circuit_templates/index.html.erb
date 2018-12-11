@@ -78,13 +78,21 @@
 
         <!-- Display circuit.workout_id start -->
         <td>
-          <%= circuit.workout.user_id %>
+          <% if circuit.workout.present? %>
+            <a href="/workouts/<%= circuit.workout.id %>">
+              <%= circuit.workout.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display circuit.workout_id end -->
 
         <!-- Display circuit.exercise_id start -->
         <td>
-          <%= circuit.exercise.name %>
+          <% if circuit.exercise.present? %>
+            <a href="/exercises/<%= circuit.exercise.id %>">
+              <%= circuit.exercise.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display circuit.exercise_id end -->
 

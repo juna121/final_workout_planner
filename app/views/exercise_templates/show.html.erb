@@ -43,7 +43,11 @@
       </dt>
       <!-- Display bodypart_id start -->
       <dd>
-        <%= @exercise.bodypart_id %>
+        <% if @exercise.bodypart.present? %>
+          <a href="/bodyparts/<%= @exercise.bodypart_id %>">
+            <%= @exercise.bodypart.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display bodypart_id end -->
 

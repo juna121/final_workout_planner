@@ -64,7 +64,11 @@
 
         <!-- Display exercise.bodypart_id start -->
         <td>
-          <%= exercise.bodypart.name %>
+          <% if exercise.bodypart.present? %>
+            <a href="/bodyparts/<%= exercise.bodypart.id %>">
+              <%= exercise.bodypart.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display exercise.bodypart_id end -->
 

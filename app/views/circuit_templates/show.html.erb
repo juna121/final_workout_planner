@@ -34,7 +34,11 @@
       </dt>
       <!-- Display workout_id start -->
       <dd>
-        <%= @circuit.workout_id %>
+        <% if @circuit.workout.present? %>
+          <a href="/workouts/<%= @circuit.workout_id %>">
+            <%= @circuit.workout.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display workout_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display exercise_id start -->
       <dd>
-        <%= @circuit.exercise_id %>
+        <% if @circuit.exercise.present? %>
+          <a href="/exercises/<%= @circuit.exercise_id %>">
+            <%= @circuit.exercise.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display exercise_id end -->
 
