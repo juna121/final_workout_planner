@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Circuits
+
+    <a data-toggle="collapse" href="#workout_circuits_new_form">
+      Add circuit
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @workout.circuits.each do |circuit| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/circuits/<%= circuit.id %>">
+          <%= circuit.workout_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_circuit_from_workout/<%= circuit.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="workout_circuits_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

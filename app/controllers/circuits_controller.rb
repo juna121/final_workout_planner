@@ -63,6 +63,22 @@ class CircuitsController < ApplicationController
     end
   end
 
+  def destroy_row_from_workout
+    @circuit = Circuit.find(params.fetch("id_to_remove"))
+
+    @circuit.destroy
+
+    redirect_to("/workouts/#{@circuit.workout_id}", notice: "Circuit deleted successfully.")
+  end
+
+  def destroy_row_from_exercise
+    @circuit = Circuit.find(params.fetch("id_to_remove"))
+
+    @circuit.destroy
+
+    redirect_to("/exercises/#{@circuit.exercise_id}", notice: "Circuit deleted successfully.")
+  end
+
   def destroy_row
     @circuit = Circuit.find(params.fetch("id_to_remove"))
 

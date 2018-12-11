@@ -53,6 +53,14 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def destroy_row_from_bodypart
+    @exercise = Exercise.find(params.fetch("id_to_remove"))
+
+    @exercise.destroy
+
+    redirect_to("/bodyparts/#{@exercise.bodypart_id}", notice: "Exercise deleted successfully.")
+  end
+
   def destroy_row
     @exercise = Exercise.find(params.fetch("id_to_remove"))
 
