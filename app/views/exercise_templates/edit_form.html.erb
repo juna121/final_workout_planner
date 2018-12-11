@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for bodypart_id start -->
-    <input type="text" id="bodypart_id" name="bodypart_id" class="form-control" value="<%= @exercise.bodypart_id %>">
+    <%= select_tag(:bodypart_id, options_from_collection_for_select(Bodypart.all, :id, :name, @exercise.bodypart_id), :class => "form-control") %>
     <!-- Input for bodypart_id end -->
   </div>
   <!-- Label and input for bodypart_id end -->
