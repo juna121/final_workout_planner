@@ -1,0 +1,44 @@
+<h1>
+  Edit exercise #<%= @exercise.id %>
+</h1>
+
+<hr>
+
+<!-- Form exercise start -->
+<form action="/update_exercise/<%= @exercise.id %>" method="post">
+<!-- Form exercise end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @exercise.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for bodypart_id start -->
+  <div class="form-group">
+    <label for="bodypart_id">
+      Bodypart
+    </label>
+
+    <!-- Input for bodypart_id start -->
+    <input type="text" id="bodypart_id" name="bodypart_id" class="form-control" value="<%= @exercise.bodypart_id %>">
+    <!-- Input for bodypart_id end -->
+  </div>
+  <!-- Label and input for bodypart_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update exercise
+  </button>
+</form>
+
+<hr>
+
+<a href="/exercises">
+  Go back
+</a>
