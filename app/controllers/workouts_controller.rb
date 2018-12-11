@@ -6,6 +6,7 @@ class WorkoutsController < ApplicationController
   end
 
   def show
+    @circuit = Circuit.new
     @workout = Workout.find(params.fetch("id_to_display"))
 
     render("workout_templates/show.html.erb")

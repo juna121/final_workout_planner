@@ -37,6 +37,46 @@ class CircuitsController < ApplicationController
     end
   end
 
+  def create_row_from_workout
+    @circuit = Circuit.new
+
+    @circuit.workout_id = params.fetch("workout_id")
+    @circuit.exercise_id = params.fetch("exercise_id")
+    @circuit.reps = params.fetch("reps")
+    @circuit.sets = params.fetch("sets")
+    @circuit.weight = params.fetch("weight")
+    @circuit.unit = params.fetch("unit")
+    @circuit.note = params.fetch("note")
+
+    if @circuit.valid?
+      @circuit.save
+
+      redirect_to("/workouts/#{@circuit.workout_id}", notice: "Circuit created successfully.")
+    else
+      render("circuit_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_exercise
+    @circuit = Circuit.new
+
+    @circuit.workout_id = params.fetch("workout_id")
+    @circuit.exercise_id = params.fetch("exercise_id")
+    @circuit.reps = params.fetch("reps")
+    @circuit.sets = params.fetch("sets")
+    @circuit.weight = params.fetch("weight")
+    @circuit.unit = params.fetch("unit")
+    @circuit.note = params.fetch("note")
+
+    if @circuit.valid?
+      @circuit.save
+
+      redirect_to("/exercises/#{@circuit.exercise_id}", notice: "Circuit created successfully.")
+    else
+      render("circuit_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @circuit = Circuit.find(params.fetch("prefill_with_id"))
 

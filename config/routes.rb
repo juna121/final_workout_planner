@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/circuits/new", { :controller => "circuits", :action => "new_form" })
   post("/create_circuit", { :controller => "circuits", :action => "create_row" })
+  post("/create_circuit_from_exercise", { :controller => "circuits", :action => "create_row_from_exercise" })
+  post("/create_circuit_from_workout", { :controller => "circuits", :action => "create_row_from_workout" })
 
   # READ
   get("/circuits", { :controller => "circuits", :action => "index" })
@@ -47,6 +49,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/exercises/new", { :controller => "exercises", :action => "new_form" })
   post("/create_exercise", { :controller => "exercises", :action => "create_row" })
+  post("/create_exercise_from_bodypart", { :controller => "exercises", :action => "create_row_from_bodypart" })
 
   # READ
   get("/exercises", { :controller => "exercises", :action => "index" })

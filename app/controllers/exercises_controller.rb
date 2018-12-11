@@ -6,6 +6,7 @@ class ExercisesController < ApplicationController
   end
 
   def show
+    @circuit = Circuit.new
     @exercise = Exercise.find(params.fetch("id_to_display"))
 
     render("exercise_templates/show.html.erb")
@@ -27,6 +28,21 @@ class ExercisesController < ApplicationController
       @exercise.save
 
       redirect_back(:fallback_location => "/exercises", :notice => "Exercise created successfully.")
+    else
+      render("exercise_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_bodypart
+    @exercise = Exercise.new
+
+    @exercise.name = params.fetch("name")
+    @exercise.bodypart_id = params.fetch("bodypart_id")
+
+    if @exercise.valid?
+      @exercise.save
+
+      redirect_to("/bodyparts/#{@exercise.bodypart_id}", notice: "Exercise created successfully.")
     else
       render("exercise_templates/new_form_with_errors.html.erb")
     end

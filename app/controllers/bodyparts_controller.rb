@@ -6,6 +6,7 @@ class BodypartsController < ApplicationController
   end
 
   def show
+    @exercise = Exercise.new
     @bodypart = Bodypart.find(params.fetch("id_to_display"))
 
     render("bodypart_templates/show.html.erb")
