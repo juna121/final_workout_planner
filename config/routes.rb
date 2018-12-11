@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Circuit resource:
+
+  # CREATE
+  get("/circuits/new", { :controller => "circuits", :action => "new_form" })
+  post("/create_circuit", { :controller => "circuits", :action => "create_row" })
+
+  # READ
+  get("/circuits", { :controller => "circuits", :action => "index" })
+  get("/circuits/:id_to_display", { :controller => "circuits", :action => "show" })
+
+  # UPDATE
+  get("/circuits/:prefill_with_id/edit", { :controller => "circuits", :action => "edit_form" })
+  post("/update_circuit/:id_to_modify", { :controller => "circuits", :action => "update_row" })
+
+  # DELETE
+  get("/delete_circuit/:id_to_remove", { :controller => "circuits", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Exercise resource:
 
   # CREATE
