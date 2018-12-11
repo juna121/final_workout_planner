@@ -1,0 +1,33 @@
+<h1>
+  Add a new workout
+</h1>
+
+
+<hr>
+
+<!-- Form workout start -->
+<form action="/create_workout" method="post">
+<!-- Form workout end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create workout
+  </button>
+</form>
+
+<hr>
+
+<a href="/workouts">
+  Go back
+</a>
