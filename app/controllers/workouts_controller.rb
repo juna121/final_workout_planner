@@ -41,7 +41,7 @@ class WorkoutsController < ApplicationController
   def update_row
     @workout = Workout.find(params.fetch("id_to_modify"))
 
-    @workout.user_id = params.fetch("user_id")
+    
 
     if @workout.valid?
       @workout.save
