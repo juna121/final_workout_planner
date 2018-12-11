@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @exercise.circuits.each do |circuit| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/circuits/<%= circuit.id %>">
           <%= circuit.workout_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_circuit_from_exercise/<%= circuit.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="exercise_circuits_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "exercise_templates/exercise_circuits_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

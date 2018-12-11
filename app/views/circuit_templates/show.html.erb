@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link circuit start -->
       <div class="col">
         <a href="/circuits/<%= @circuit.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit circuit
         </a>
       </div>
-      <!-- Edit link circuit end -->
 
-      <!-- Delete link circuit start -->
       <div class="col">
         <a href="/delete_circuit/<%= @circuit.id %>" class="btn btn-block btn-outline-secondary">
           Delete circuit
         </a>
       </div>
-      <!-- Delete link circuit end -->
     </div>
 
     <dl>
       <dt>
         Workout
       </dt>
-      <!-- Display workout_id start -->
       <dd>
         <% if @circuit.workout.present? %>
           <a href="/workouts/<%= @circuit.workout_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display workout_id end -->
 
       <dt>
         Exercise
       </dt>
-      <!-- Display exercise_id start -->
       <dd>
         <% if @circuit.exercise.present? %>
           <a href="/exercises/<%= @circuit.exercise_id %>">
@@ -53,73 +46,56 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display exercise_id end -->
 
       <dt>
         Reps
       </dt>
-      <!-- Display reps start -->
       <dd>
         <%= @circuit.reps %>
       </dd>
-      <!-- Display reps end -->
 
       <dt>
         Sets
       </dt>
-      <!-- Display sets start -->
       <dd>
         <%= @circuit.sets %>
       </dd>
-      <!-- Display sets end -->
 
       <dt>
         Weight
       </dt>
-      <!-- Display weight start -->
       <dd>
         <%= @circuit.weight %>
       </dd>
-      <!-- Display weight end -->
 
       <dt>
         Unit
       </dt>
-      <!-- Display unit start -->
       <dd>
         <%= @circuit.unit %>
       </dd>
-      <!-- Display unit end -->
 
       <dt>
         Note
       </dt>
-      <!-- Display note start -->
       <dd>
         <%= @circuit.note %>
       </dd>
-      <!-- Display note end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@circuit.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@circuit.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

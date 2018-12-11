@@ -1,23 +1,14 @@
-<!-- Form exercise start -->
 <form action="/create_exercise_from_bodypart" method="post">
-<!-- Form exercise end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @exercise.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for bodypart_id start -->
-  <!-- Input for bodypart_id start -->
   <input type="hidden" name="bodypart_id" value="<%= @bodypart.id %>">
-  <!-- Input for bodypart_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create exercise

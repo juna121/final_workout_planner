@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @bodypart.exercises.each do |exercise| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/exercises/<%= exercise.id %>">
           <%= exercise.name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_exercise_from_bodypart/<%= exercise.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="bodypart_exercises_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "bodypart_templates/bodypart_exercises_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

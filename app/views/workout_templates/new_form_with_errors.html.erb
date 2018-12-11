@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @workout.present? %>
   <% if @workout.errors.any? %>
     <% @workout.errors.full_messages.each do |message| %>
@@ -16,15 +15,9 @@
 
 <hr>
 
-<!-- Form workout start -->
 <form action="/create_workout" method="post">
-<!-- Form workout end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create workout

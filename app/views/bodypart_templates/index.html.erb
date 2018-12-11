@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "bodypart_templates/bodyparts_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -50,29 +46,21 @@
 
       <% @bodyparts.each do |bodypart| %>
       <tr>
-        <!-- Display bodypart.id start -->
         <td>
           <%= bodypart.id %>
         </td>
-        <!-- Display bodypart.id end -->
 
-        <!-- Display bodypart.name start -->
         <td>
           <%= bodypart.name %>
         </td>
-        <!-- Display bodypart.name end -->
 
-        <!-- Display bodypart.created_at start -->
         <td>
           <%= time_ago_in_words(bodypart.created_at) %> ago
         </td>
-        <!-- Display bodypart.created_at end -->
 
-        <!-- Display bodypart.updated_at start -->
         <td>
           <%= time_ago_in_words(bodypart.updated_at) %> ago
         </td>
-        <!-- Display bodypart.updated_at end -->
 
         <td>
           <a href="/bodyparts/<%= bodypart.id %>">
