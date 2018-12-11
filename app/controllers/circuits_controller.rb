@@ -1,6 +1,6 @@
 class CircuitsController < ApplicationController
   def index
-    @circuits = Circuit.all
+    @circuits = Circuit.page(params[:page]).per(10)
 
     render("circuit_templates/index.html.erb")
   end

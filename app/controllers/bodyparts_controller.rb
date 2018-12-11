@@ -1,6 +1,6 @@
 class BodypartsController < ApplicationController
   def index
-    @bodyparts = Bodypart.all
+    @bodyparts = Bodypart.page(params[:page]).per(10)
 
     render("bodypart_templates/index.html.erb")
   end
