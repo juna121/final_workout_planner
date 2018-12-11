@@ -1,6 +1,7 @@
 class CircuitsController < ApplicationController
   def index
-    @circuits = Circuit.page(params[:page]).per(10)
+    @q = Circuit.ransack(params[:q])
+    @circuits = @q.result(:distinct => true).includes(:workout, :exercise).page(params[:page]).per(10)
 
     render("circuit_templates/index.html.erb")
   end

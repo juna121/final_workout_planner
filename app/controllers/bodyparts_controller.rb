@@ -1,6 +1,7 @@
 class BodypartsController < ApplicationController
   def index
-    @bodyparts = Bodypart.page(params[:page]).per(10)
+    @q = Bodypart.ransack(params[:q])
+    @bodyparts = @q.result(:distinct => true).includes(:exercises).page(params[:page]).per(10)
 
     render("bodypart_templates/index.html.erb")
   end
